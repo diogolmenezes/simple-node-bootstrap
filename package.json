@@ -16,12 +16,13 @@
     "wizard": "node ./api/config/wizard",
     "test:wizard": "clear;./node_modules/mocha/bin/mocha ./test/wizard_test"
   },
-  "author": "Easy Framework",
+  "author": "Simple Node Framework",
   "license": "ISC",
   "dependencies": {
-    "easy-fw": "file:../easy-framework",
+    "dotenv": "^7.0.0",
     "mongoose": "^5.4.19",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "simple-node-framework": "file:../simple-node-framework"
   },
   "devDependencies": {
     "chai": "^4.2.0",

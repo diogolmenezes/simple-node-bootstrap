@@ -1,5 +1,5 @@
 const { server, restify } = require('./api/config/server');
-const { config, route, applicationError, redis, logger, database } = require('easy-framework');
+const { config, route, applicationError, redis, logger, database } = require('simple-node-framework');
 
 // iniciando o servidor web
 server.listen(config.app.port, () => {
@@ -27,7 +27,8 @@ server.on('close', () => {
 
 // finaliza a aplicação e todas as suas conexões
 process.on('SIGINT', () => {
-    server.close();
+    if(server.server && server.server.listening)
+        server.close();
 });
 
 // exceções nao tratadas
@@ -43,9 +44,9 @@ server.get('/', (req, res, next) => {
 });
 
 // configurando rota para o swagger
-server.get(/\/doc\/?.*/, restify.plugins.serveStatic({
-    default: 'index.html',
-    directory: __dirname
-}));
+// server.get(/\/doc\/?.*/, restify.plugins.serveStatic({
+//     default: 'index.html',
+//     directory: __dirname
+// }));
 
 module.exports = server;

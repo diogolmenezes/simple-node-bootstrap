@@ -2,7 +2,7 @@
 
 O [bootstrap](http://dadhx01.interno/oidigital/easy-bootstrap) de projeto disponibiliza a estrutura padrão de diretórios e um conjunto mínimo de funcionalidades para construção de uma API em nodejs.
 
-Esse bootstrap faz uso do [framework de desenvolvimento de APIs nodeJs](http://dadhx01.interno/oidigital/easy-framework) da Oi.
+Esse bootstrap faz uso do [framework de desenvolvimento de APIs nodeJs](http://dadhx01.interno/oidigital/simple-node-framework) da Oi.
 
 ## Responsáveis
 

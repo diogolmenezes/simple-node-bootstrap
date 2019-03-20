@@ -1,9 +1,9 @@
 const sinon = require('sinon');
 const controller = new (require('../../controller'));
-const { TestHelper } = require('easy-framework');
+const { TestHelper } = require('simple-node-framework');
 const { expect } = require('chai');
 
-describe('Cliente Controller', () => {
+describe('Customer Controller', () => {
     const sandbox = sinon.sandbox.create();
 
     before(() => {
@@ -18,25 +18,25 @@ describe('Cliente Controller', () => {
         sandbox.restore();
     });
 
-    it('Deve retornar 200 e carregar cliente por nome', (done) => {
-        sandbox.stub(controller.service, 'carregarPorNome').returns(Promise.resolve({
-            nome: 'um_nome_qualquer'
+    it('Must return 200 and load the customer by name', (done) => {
+        sandbox.stub(controller.service, 'findByName').returns(Promise.resolve({
+            name: 'some_name'
         }));
 
         const req = {
             params: {
-                nome: 'um_nome_qualquer'
+                name: 'some_name'
             }
         };
 
         const res = {
-            send: (code, cliente) => {
+            send: (code, customer) => {
                 expect(code).to.be.equal(200);
-                expect(cliente.nome).to.be.equal('um_nome_qualquer');
+                expect(customer.name).to.be.equal('some_name');
                 done();
             }
         };
 
-        controller.carregar(req, res, sinon.spy());
+        controller.load(req, res, sinon.spy());
     });
 });

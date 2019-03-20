@@ -7,14 +7,14 @@
     "cors": {
         "preflightMaxAge": 5,
         "origins": ["*"],
-        "allowHeaders": ["x-cpf", "x-origin-channel", "x-origin-application", "x-origin-device"],
+        "allowHeaders": ["x-origin-channel", "x-origin-application", "x-origin-device"],
         "exposeHeaders": []
     },
     "db": {
-        "aplicacao": {
+        "application": {
             "url": "mongodb://localhost:27017/my-application",
             "options": {
-                "useMongoClient": true,
+                "useNewUrlParser": true,
                 "poolSize": 10
             }
         }

@@ -10,7 +10,6 @@
             "*"
         ],
         "allowHeaders": [
-            "x-cpf",
             "x-origin-channel",
             "x-origin-application",
             "x-origin-device"
@@ -18,10 +17,10 @@
         "exposeHeaders": []
     },
     "db": {
-        "aplicacao": {
+        "application": {
             "url": "mongodb://localhost:27017/my-application",
             "options": {
-                "useMongoClient": true,
+                "useNewUrlParser": true,
                 "poolSize": 10
             }
         }
@@ -82,21 +81,24 @@
                 "device": false
             }
     },
-    "rest": {
-        "servico1": {
-            "timeout": 3,
-            "endpoint": "http://..."
+    "integrations": 
+    {
+        "rest": {
+            "sampleRest": {
+                "timeout": 3,
+                "endpoint": "http://dummy.restapiexample.com/api/v1/employees"
+            },
+            "sampleRest2": {
+                "timeout": 3,
+                "endpoint": "http://..."
+            }
         },
-        "servico2": {
-            "timeout": 3,
-            "endpoint": "http://..."
-        }
-    },
-    "soap": {
-        "servico1": {
-            "timeout": 5,
-            "wsdl": "http://...?wsdl",
-            "endpoint": "http://..."
+        "soap": {
+            "servico1": {
+                "timeout": 5,
+                "wsdl": "http://...?wsdl",
+                "endpoint": "http://..."
+            }
         }
     }
 }

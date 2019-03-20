@@ -1,16 +1,17 @@
-const { Authorization } = require('easy-framework');
+const { Authorization } = require('simple-node-framework');
 
-// Classe customizada de autorização extendendo a classe padrao de autorização do framework
+// You can extend simple-node-framework base authorization class if you need.
 class CustomAuthorization extends Authorization {
     constructor() {
         super({
-            module: 'Authorization'
+            module: 'SNF Authorization'
         });
     }
 
-    // Autenticação customizada
+    // Custom authentication sample
     // bearerValidate(req, res, next) {
     //     super.bearerValidate(req, res, next);
+    //     ... your custom code ...
     // }
 }
 

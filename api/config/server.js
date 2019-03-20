@@ -1,21 +1,23 @@
-const { audit, Restify, cache } = require('easy-framework');
+const { audit, Restify, cache } = require('simple-node-framework');
 
-// Classe customizada para extender as configurações basicas do restify do framework
+// You can extend simple-node-framework base server class if you need.
+// Here you can manipulate restify middlewares order for exemple.
 class Server extends Restify {
     applyMiddlewares() {
         super.applyMiddlewares();
 
-        // Habilitando o cache
+        // Enabling application cache
+        // The resolveKey is the key for your cache entry
         // this.server.use(cache.start({
         //     resolveKey: (req) => {
-        //         return req.headers['x-cpf'];
+        //         return req.headers['your-key'];
         //     }
         // }));
     }
 
     // applyAudit() {
     //     audit.configure(this.server, (req, res, route, err) => {
-    //         // console.log('Log customizado de auditoria');
+    //         // console.log('Custom log for restify audit');
     //     });
     // }
 }

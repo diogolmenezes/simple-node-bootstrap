@@ -1,4 +1,4 @@
-const { config, BaseSoap } = require('easy-framework');
+const { config, BaseSoap } = require('simple-node-framework');
 
 // Classe de exemplo para chamadas de serviço REST
 class SolicitarAberturaProtocolo extends BaseSoap {
