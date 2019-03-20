@@ -1,0 +1,9 @@
+logs/*.log*
+coverage/
+test/reports/
+node_modules/
+.nyc_output/
+.sonarlint/
+npm-debug.log
+.scannerwork/*
+package-lock.json
