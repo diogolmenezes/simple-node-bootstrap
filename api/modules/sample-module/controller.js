@@ -12,7 +12,7 @@ class Controller extends BaseController {
 
     async load(req, res, next) {
         super.activateRequestLog(req); // this will automatically put the request-id on all logs
-        
+
         const { name } = req.params;
 
         try {
@@ -20,16 +20,14 @@ class Controller extends BaseController {
 
             const customer = await this.service.loadByName(name);
 
-            if(customer)
-                res.send(200, customer);
-            else
-                res.send(404);
+            if (customer) res.send(200, customer);
+            else res.send(404);
 
             return next();
-        }
-        catch (error) {
+        } catch (error) {
             this.log.error('Unexpected error on load', error);
             res.send(500, 'Unexpected error');
+            return next();
         }
     }
 }

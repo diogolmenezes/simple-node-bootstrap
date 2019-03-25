@@ -8,6 +8,10 @@ class CustomServer extends Server {
     }
 }
 
-const server = new CustomServer().configure();
+const customServer = new CustomServer();
+const server = customServer.configure();
 
-module.exports = server;
+module.exports = {
+    server,
+    baseServer: customServer.baseServer
+};

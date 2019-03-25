@@ -1,3 +1,5 @@
 package-lock.json
 node_modules/
 logs/*.log*
+test-reports/
+.nyc_output/
