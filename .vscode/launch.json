@@ -8,7 +8,7 @@
             "name": "Debugar - Local",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/app.js",
+            "program": "${workspaceRoot}/index.js",
             "env": {
                 "NODE_ENV": "default"
             }
@@ -17,7 +17,7 @@
             "name": "Debugar - Produção",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/app.js",
+            "program": "${workspaceRoot}/index.js",
             "env": {
                 "NODE_ENV": "production"
             }
@@ -26,7 +26,7 @@
             "name": "Debugar - Homologação",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/app.js",
+            "program": "${workspaceRoot}/index.js",
             "env": {
                 "NODE_ENV": "staging"
             }

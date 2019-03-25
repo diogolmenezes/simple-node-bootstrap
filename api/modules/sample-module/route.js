@@ -1,10 +1,9 @@
 const { route, ControllerFactory } = require('simple-node-framework');
-const { server } = require('../../config/server');
+const server = require('../../../index.js');
 const Controller = require('./controller');
-const authorization = require('../../config/custom-authorization');
 
-// Through the info object we obtain information that allows us to be flexible to create more elegant and meaningful routes:
-// { base: '/api', module: 'sample-module', full: '/api/sample-module' }
+// retreive route information
+// ex: { baseRoute: '/api', module: 'customer', full: '/api/customer' }
 const { full } = route.info(__filename);
 
-server.get(`${full}/:name`, authorization.protect.bind(authorization), ControllerFactory.build(Controller, 'load'));
+server.get(`${full}/:name`, ControllerFactory.build(Controller, 'load'));

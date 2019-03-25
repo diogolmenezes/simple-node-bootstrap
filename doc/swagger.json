@@ -1,85 +1,53 @@
 {
- "swagger": "2.0",
- "info": {
-  "description": "Descrição da aplicação",
-  "version": "1.0.0",
-  "title": "Minha Aplicação",
-  "contact": {
-   "email": "desenvolvedor@oi.net.br"
+  "swagger": "2.0",
+  "info": {
+    "description": "Description of your application",
+    "version": "1.0.0",
+    "title": "My application",
+    "contact": {
+      "email": "your@mail.com"
+    }
+  },
+  "host": "localhost:8094",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/sample-module/{name}": {
+      "get": {
+        "summary": "Loads a customer by the name",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "description": "Name of customer",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer loaded"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "My application",
+    "url": "http://swagger.io"
   }
- },
- "host": "localhost:8094",
- "basePath": "/minha-aplicacao",
- "schemes": [
-  "http"
- ],
- "paths": {
-  "/cliente/{nome}": {
-   "get": {
-    "summary": "Carrega um cliente pelo nome",
-    "consumes": [
-     "application/json"
-    ],
-    "produces": [
-     "application/json"
-    ],
-    "parameters": [
-     {
-      "in": "path",
-      "name": "nome",
-      "description": "Nome do cliente a ser carregado",
-      "required": true,
-      "type": "string"
-     },
-     {
-      "in": "header",
-      "name": "x-origin-application",
-      "description": "Nome da aplicação origem da requisição. Ex: minha-aplicacao",
-      "type": "string",
-      "required": true
-     },
-     {
-      "in": "header",
-      "name": "x-origin-channel",
-      "description": "Nome do canal origem da requisição. Ex: app-ios",
-      "type": "string",
-      "required": true
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "Cliente carregado com sucesso"
-     },
-     "400": {
-      "description": "Campos obrigatórios não preenchidos"
-     },
-     "401": {
-      "description": "Não autorizado, token de autenticação não foi enviado"
-     },
-     "403": {
-      "description": "Acesso negado, token inválido."
-     },
-     "412": {
-      "description": "Headers de origem não enviados."
-     }
-    },
-    "security": [
-     {
-      "api_key": []
-     }
-    ]
-   }
-  }
- },
- "securityDefinitions": {
-  "api_key": {
-   "type": "apiKey",
-   "name": "Authorization",
-   "in": "header"
-  }
- },
- "externalDocs": {
-  "description": "Minha Aplicação",
-  "url": "http://swagger.io"
- }
 }

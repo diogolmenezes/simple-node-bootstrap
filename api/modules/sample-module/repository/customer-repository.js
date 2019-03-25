@@ -1,20 +1,19 @@
-const { BaseRepository } = require('simple-node-framework');
+const { BaseRepository } = require('simple-node-framework').Base;
 const customerModel = require('../model/customer');
 
+
+// sample repository
 class CustomerRepository extends BaseRepository {
     constructor() {
         super({
-            module: 'Customer Repository'
+            module: 'Customer Repository' // the module name will prefix all your logs
         });
-
         this.model = customerModel;
     }
 
-    findByName(name) {
-        this.log.debug(`Searching customer by name [${name}]`);
-        return this.model.findOne({
-            name
-        });
+    async loadByName(name) {
+        this.log.debug(`Loading customer [${name}]`);
+        return this.model.findOne({ name });
     }
 }
 

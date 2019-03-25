@@ -1,39 +1,37 @@
-const { applicationError, BaseController } = require('simple-node-framework');
+const { BaseController } = require('simple-node-framework').Base;
 const CustomerService = require('./service/customer-service');
 
-class CustomerController extends BaseController {
+// sample controller
+class Controller extends BaseController {
     constructor() {
         super({
-            module: 'Customer Controller'
+            module: 'My Sample Controller' // the module name will prefix all your logs
         });
-        this.service = new CustomerService;
+        this.service = new CustomerService();
     }
 
-    load(req, res, next) {
-        super.activateRequestLog(req);
-
+    async load(req, res, next) {
+        super.activateRequestLog(req); // this will automatically put the request-id on all logs
+        
         const { name } = req.params;
 
-        this.log.debug(`Searching customer by name [${name}]`);
+        try {
+            this.log.debug(`Loading customer [${name}]`);
 
-        if (!name) {
-            return next(applicationError.throw('[load] Required fields not filled in', 'BadRequestError'));
-        }
+            const customer = await this.service.loadByName(name);
 
-        return this.service.findByName(name)
-            .then((customer) => {
-                if (!customer) {
-                    return next(applicationError.throw(`Customer [${name}] not found.`, 'NotFoundError'));
-                }
-
-                this.log.debug(`Customer was loaded [${customer}]`);
-
+            if(customer)
                 res.send(200, customer);
+            else
+                res.send(404);
 
-                return next();
-            })
-            .catch(erro => next(applicationError.throw(erro)));
+            return next();
+        }
+        catch (error) {
+            this.log.error('Unexpected error on load', error);
+            res.send(500, 'Unexpected error');
+        }
     }
 }
 
-module.exports = CustomerController;
+module.exports = Controller;

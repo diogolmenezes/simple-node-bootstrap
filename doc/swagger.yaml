@@ -1,0 +1,35 @@
+swagger: "2.0"
+info:
+  description: "Description of your application"
+  version: "1.0.0"
+  title: "My application"
+  contact:
+    email: "your@mail.com"
+host: "localhost:8094"
+basePath: "/api"
+schemes:
+- "http"
+paths:
+  /sample-module/{name}:
+    get:
+      summary: "Loads a customer by the name"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: path
+        name: "name"
+        description: "Name of customer"
+        required: true
+        type: string      
+      responses:
+        200:
+          description: "Customer loaded"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal Server Error"
+externalDocs:
+  description: "My application"
+  url: "http://swagger.io"

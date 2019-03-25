@@ -29,6 +29,15 @@
         "host": "localhost",
         "port": 6379
     },
+    "cache": {
+        "enabled": true,
+        "headerKey": "x-identifier"
+    },
+    "session": {
+        "prefix": "myapplication",
+        "headerKey": "x-identifier",
+        "ttl": 3600
+    },
     "log": {
         "debug": true,
         "bunyan": {
@@ -45,7 +54,7 @@
         }
     },
     "authorization": {
-        "enabled": false,
+        "enabled": true,
         "scheme": "Bearer",
         "jwt": {
             "secret": "49b4e2f9-ec31-4758-bae5-741a80e0e8de",
@@ -76,29 +85,9 @@
                 "/doc/"
             ],
             "require": {
-                "application": true,
-                "channel": true,
+                "application": false,
+                "channel": false,
                 "device": false
             }
-    },
-    "integrations": 
-    {
-        "rest": {
-            "sampleRest": {
-                "timeout": 3,
-                "endpoint": "http://dummy.restapiexample.com/api/v1/employees"
-            },
-            "sampleRest2": {
-                "timeout": 3,
-                "endpoint": "http://..."
-            }
-        },
-        "soap": {
-            "servico1": {
-                "timeout": 5,
-                "wsdl": "http://...?wsdl",
-                "endpoint": "http://..."
-            }
-        }
     }
 }
