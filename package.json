@@ -24,7 +24,7 @@
   "homepage": "https://github.com/diogolmenezes/simple-node-bootstrap#readme",
   "dependencies": {
     "mongoose": "^5.4.19",
-    "simple-node-framework": "file:../simple-node-framework"
+    "simple-node-framework": "^1.0.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
