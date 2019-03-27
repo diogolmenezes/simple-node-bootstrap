@@ -12,7 +12,8 @@
         "allowHeaders": [
             "x-origin-channel",
             "x-origin-application",
-            "x-origin-device"
+            "x-origin-device",
+            "x-identifier"
         ],
         "exposeHeaders": []
     },
