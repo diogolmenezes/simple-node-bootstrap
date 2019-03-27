@@ -12,4 +12,4 @@ npm run test:dev | run unit tests without execute nyc report
 npm run integration | run integration tests
 npm run lint | run eslint
 npm run doc:edit | open user interface to edit swagger.yaml file
-npm run doc:update | build and update the documentation, do this after change the swagger.yaml and your http://localhost:port/doc/ will be updated
+npm run doc:update | build and update the documentation, do this after change the swagger.yaml and your http://localhost:8094/doc/ will be updated
