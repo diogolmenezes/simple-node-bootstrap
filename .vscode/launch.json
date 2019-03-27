@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debugar - Local",
+            "name": "Debug on Localhost",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/index.js",
@@ -14,7 +14,7 @@
             }
         },
         {
-            "name": "Debugar - Produção",
+            "name": "Debug on Production",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/index.js",
@@ -23,7 +23,7 @@
             }
         },
         {
-            "name": "Debugar - Homologação",
+            "name": "Debug on Staging",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/index.js",
@@ -32,7 +32,7 @@
             }
         },
         {
-            "name": "Debugar Teste Unitário",
+            "name": "Debug Unit Test",
             "type": "node",
             "request": "launch",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "name": "Debugar Teste Integrado",
+            "name": "Debug Integrated Test",
             "type": "node",
             "request": "launch",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
