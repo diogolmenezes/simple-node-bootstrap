@@ -1,6 +1,6 @@
 # my-application
 
-This is my-application, [write your application description here]
+This is my-application that uses [simple-node-framework](https://github.com/diogolmenezes/simple-node-framework), [write your application description here]
 
 ## Tasks
 
