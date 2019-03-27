@@ -40,7 +40,7 @@
         "ttl": 3600
     },
     "log": {
-        "debug": true,
+        "debug": false,
         "bunyan": {
             "name": "Application",
             "streams": [
