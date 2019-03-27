@@ -5,7 +5,7 @@ info:
   title: "My application"
   contact:
     email: "your@mail.com"
-host: "localhost:8094"
+host: "localhost:8090"
 basePath: "/api"
 schemes:
 - "http"
