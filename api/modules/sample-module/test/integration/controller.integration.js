@@ -11,9 +11,11 @@ describe('Controller', () => {
         server.close();
     });
 
-    it('Shpould return 404 if not find the customer', (done) => {
+    it('Should return 404 if not find the customer', (done) => {
         supertest(server)
             .get('/api/sample-module/some-not-found-name')
+            .set('x-origin-application', 'my-application')
+            .set('x-origin-channel', 'unit-test')
             .expect(404)
             .end((err) => {
                 if (err) throw err;
