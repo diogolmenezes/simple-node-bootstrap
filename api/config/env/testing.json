@@ -28,10 +28,12 @@
     },
     "redis": {
         "host": "localhost",
+        "ttl": 86400,
         "port": 6379
     },
     "cache": {
         "enabled": true,
+        "ttl": 1800,
         "headerKey": "x-identifier"
     },
     "session": {
