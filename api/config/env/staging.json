@@ -58,10 +58,9 @@
     },
     "authorization": {
         "enabled": true,
-        "scheme": "Bearer",
-        "jwt": {
-            "secret": "49b4e2f9-ec31-4758-bae5-741a80e0e8de",
-            "expiresIn": "1h"
+        "basic": {
+            "username": "admin",
+            "password": "admin"
         }
     },
     "audit": {

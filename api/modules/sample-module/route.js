@@ -1,4 +1,5 @@
-const { route, ControllerFactory } = require('simple-node-framework');
+const { ControllerFactory } = require('simple-node-framework');
+const { route } = require('simple-node-framework').Singleton;
 const server = require('../../../index.js');
 const Controller = require('./controller');
 
