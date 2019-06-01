@@ -18,11 +18,13 @@
         "exposeHeaders": []
     },
     "db": {
-        "application": {
-            "url": "mongodb://localhost:27017/my-application",
-            "options": {
-                "useNewUrlParser": true,
-                "poolSize": 10
+        "mongodb": {
+            "application": {
+                "url": "mongodb://localhost:27017/my-application",
+                "options": {
+                    "useNewUrlParser": true,
+                    "poolSize": 10
+                }
             }
         }
     },
