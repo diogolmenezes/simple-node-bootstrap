@@ -22,8 +22,13 @@
             "application": {
                 "url": "mongodb://localhost:27017/my-application",
                 "options": {
+                    "user": "XX",
+                    "pass": "XXXX",
+                    "poolSize": 10,
+                    "keepAlive": 300000,
                     "useNewUrlParser": true,
-                    "poolSize": 10
+                    "reconnectTries": 500,
+                    "connectTimeoutMS": 30000
                 }
             }
         }
@@ -32,16 +37,6 @@
         "host": "localhost",
         "ttl": 86400,
         "port": 6379
-    },
-    "cache": {
-        "enabled": true,
-        "ttl": 1800,
-        "headerKey": "x-identifier"
-    },
-    "session": {
-        "prefix": "myapplication",
-        "headerKey": "x-identifier",
-        "ttl": 3600
     },
     "log": {
         "debug": false,
@@ -63,22 +58,6 @@
         "basic": {
             "username": "admin",
             "password": "admin"
-        }
-    },
-    "audit": {
-        "enabled": true,
-        "printLog": true,
-        "bunyan": {
-            "name": "Audit",
-            "streams": [
-                {
-                    "level": "debug",
-                    "type": "rotating-file",
-                    "path": "logs/audit.log",
-                    "period": "1d",
-                    "count": 2
-                }
-            ]
         }
     },
     "origin": {
