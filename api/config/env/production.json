@@ -38,6 +38,16 @@
         "ttl": 86400,
         "port": 6379
     },
+    "cache": {
+        "enabled": true,
+        "ttl": 1800,
+        "headerKey": "x-identifier"
+    },
+    "session": {
+        "prefix": "myapplication",
+        "headerKey": "x-identifier",
+        "ttl": 3600
+    },
     "log": {
         "debug": false,
         "bunyan": {
