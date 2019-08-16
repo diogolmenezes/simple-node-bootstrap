@@ -27,7 +27,9 @@
                     "poolSize": 10,
                     "keepAlive": 300000,
                     "useNewUrlParser": true,
-                    "reconnectTries": 500,
+                    "autoReconnect": true,
+                    "reconnectInterval": 60000,
+                    "reconnectTries": 1440,
                     "connectTimeoutMS": 30000
                 }
             }
