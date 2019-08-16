@@ -20,7 +20,7 @@
     "db": {
         "mongodb": {
             "application": {
-                "url": "mongodb://localhost:27017/my-application",
+                "url": "mongodb://A:27017,B:27017,C:27017/my-application?replicaSet=myreplicaset",
                 "options": {
                     "user": "XX",
                     "pass": "XXXX",
