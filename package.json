@@ -10,7 +10,7 @@
     "integration": "clear;./node_modules/mocha/bin/mocha ./api/modules/*/test/integration/*.integration.js",
     "lint": "clear; ./node_modules/.bin/eslint api/*",
     "doc:edit": "clear; swagger_swagger_fileName=doc/swagger.yaml swagger project edit",
-    "doc:update": "clear; js-yaml doc/swagger.yaml >> doc/swagger.json"
+    "doc:update": "clear; js-yaml doc/swagger.yaml > doc/swagger.json"
   },
   "repository": {
     "type": "git",
