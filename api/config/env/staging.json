@@ -66,8 +66,12 @@
     "authorization": {
         "enabled": true,
         "basic": {
-            "username": "admin",
-            "password": "admin"
+            "users": [
+                {
+                    "username": "admin",
+                    "password": "admin"
+                }
+            ]
         }
     },
     "origin": {
