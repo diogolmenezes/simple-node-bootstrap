@@ -1,8 +1,8 @@
-{
+module.exports = {
     "app": {
         "name": "my-application",
         "baseRoute": "/api",
-        "port": 8090
+        "port": process.env.SNF_MY_APPLICATION_PORT || 8090
     },
     "cors": {
         "preflightMaxAge": 5,

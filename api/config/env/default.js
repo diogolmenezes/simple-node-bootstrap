@@ -1,8 +1,8 @@
-{
+module.exports = {
     "app": {
         "name": "my-application",
         "baseRoute": "/api",
-        "port": 8090
+        "port": process.env.SNF_MY_APPLICATION_PORT || 8090
     },
     "cors": {
         "preflightMaxAge": 5,
@@ -20,10 +20,8 @@
     "db": {
         "mongodb": {
             "application": {
-                "url": "mongodb://A:27017,B:27017,C:27017/my-application?replicaSet=myreplicaset",
+                "url": "mongodb://localhost:27017/my-application",
                 "options": {
-                    "user": "XX",
-                    "pass": "XXXX",
                     "poolSize": 10,
                     "keepAlive": 300000,
                     "useNewUrlParser": true,
@@ -51,7 +49,7 @@
         "ttl": 3600
     },
     "log": {
-        "debug": false,
+        "debug": true,
         "bunyan": {
             "name": "Application",
             "streams": [
@@ -77,16 +75,16 @@
         }
     },
     "origin": {
-            "ignoreExact": [
-                "/"
-            ],
-            "ignore": [
-                "/doc/"
-            ],
-            "require": {
-                "application": true,
-                "channel": true,
-                "device": false
-            }
+        "ignoreExact": [
+            "/"
+        ],
+        "ignore": [
+            "/doc/"
+        ],
+        "require": {
+            "application": true,
+            "channel": true,
+            "device": false
+        }
     }
 }
