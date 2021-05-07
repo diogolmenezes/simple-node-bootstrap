@@ -24,7 +24,7 @@
   "homepage": "https://github.com/diogolmenezes/simple-node-bootstrap#readme",
   "dependencies": {
     "mongoose": "^5.4.19",
-    "simple-node-framework": "^2.0.14"
+    "simple-node-framework": "^2.1.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -35,6 +35,7 @@
     "istanbul": "^0.4.5",
     "js-yaml": "^3.13.0",
     "mocha": "^6.0.2",
+    "nodemon": "^2.0.7",
     "nyc": "^13.3.0",
     "sinon": "^7.3.0",
     "supertest": "^4.0.2"
