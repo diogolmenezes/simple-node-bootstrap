@@ -2,7 +2,7 @@ module.exports = {
     app: {
         name: 'my-application',
         baseRoute: '/api',
-        port: process.env.SNF_MY_APPLICATION_PORT || 8090
+        port: process.env.SNF_MY_APPLICATION_PORT || 8090 // you can use environment variables
     },
     cors: {
         preflightMaxAge: 5,

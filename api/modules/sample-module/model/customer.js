@@ -10,4 +10,4 @@ const schema = mongoose.Schema({
     collection: 'customers'
 });
 
-module.exports = connection.model('Customer', schema);
+module.exports = connection.models.Customer || connection.model('Customer', schema);
