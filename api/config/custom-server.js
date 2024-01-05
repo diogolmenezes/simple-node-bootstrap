@@ -12,6 +12,6 @@ const customServer = new CustomServer();
 const server = customServer.configure();
 
 module.exports = {
-    server,
-    baseServer: customServer.baseServer
+    server: server.app,
+    baseServer: server.baseServer
 };

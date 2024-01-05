@@ -1,15 +1,10 @@
+require('dotenv').config({ path: `./.env.${process.env.NODE_ENV}` });
+const express = require('express')
 const customServer = require('./api/config/custom-server');
 
-const { server, baseServer: restify } = customServer;
+const { server, baseServer} = customServer;
 
 // serving the swagger documentation
-// http://localhost:8090/doc/
-server.get(
-    '/doc/*',
-    restify.plugins.serveStatic({
-        directory: __dirname,
-        default: 'index.html'
-    })
-);
+server.use('/doc', express.static('doc'))
 
 module.exports = server;
