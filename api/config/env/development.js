@@ -5,32 +5,27 @@ module.exports = {
         port: process.env.SNF_MY_APPLICATION_PORT || 8090 // you can use environment variables
     },
     cors: {
-        preflightMaxAge: 5,
-        origins: [
-            '*'
-        ],
-        allowHeaders: [
+        origin: '*',
+        allowedHeaders: [
             'x-origin-channel',
             'x-origin-application',
             'x-origin-device',
             'x-identifier'
         ],
-        exposeHeaders: []
+        methods: ['GET', 'POST', 'PATCH', 'PUT', 'OPTIONS'],
+        credentials: true
     },
     db: {
         mongodb: {
             application: {
-                url: 'mongodb://localhost:27017/my-application',
+                url: process.env.MONGO_CONNECTION_STRING,
                 options: {
-                    poolSize: 10,
-                    keepAlive: 300000,
-                    useNewUrlParser: true,
-                    autoReconnect: true,
-                    reconnectInterval: 60000,
-                    reconnectTries: 1440,
-                    connectTimeoutMS: 30000
+                    user: process.env.MONGO_USER,
+                    pass: process.env.MONGO_PASSWORD,
+                    minPoolSize: 5,
+                    maxPoolSize: 10
                 }
-            }
+            },
         }
     },
     redis: {
@@ -49,16 +44,28 @@ module.exports = {
         ttl: 3600
     },
     log: {
-        debug: true,
+        debug: false,
+        requestResponse: {
+            enabled: true,
+            logResponseTime: true,
+            ignore: [
+                '/'
+            ],
+            bodyCallback: body => {
+                // if you need to remove any information from the request log, do it here.
+                return body;
+            },
+            headerCallback: body => {
+                // if you need to remove any information from the request log, do it here.
+                return body;
+            }
+        },
         bunyan: {
             name: 'Application',
             streams: [
                 {
                     level: 'debug',
-                    type: 'rotating-file',
-                    path: 'logs/{hostname}.log',
-                    period: '1d',
-                    count: 2
+                    stream: 'process.stdout'
                 }
             ]
         }
