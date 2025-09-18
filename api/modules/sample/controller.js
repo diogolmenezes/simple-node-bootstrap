@@ -18,12 +18,12 @@ class Controller extends BaseController {
             const forecast = await this.service.buscarPrevisaoDotempo();
 
             this.log.debug('Previsão do tempo obtida com sucesso');
-            res.send(200, forecast);
+            res.status(200).send(forecast);
 
             return next();
         } catch (error) {
             this.log.error('Erro inesperado ao buscar previsão do tempo', error);
-            res.send(500, { error: 'Erro inesperado ao buscar previsão do tempo' });
+            res.status(500).send({ error: 'Erro inesperado ao buscar previsão do tempo' });
             return next();
         }
     }
