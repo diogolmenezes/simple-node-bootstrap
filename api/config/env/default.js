@@ -15,34 +15,6 @@ module.exports = {
         methods: ['GET', 'POST', 'PATCH', 'PUT', 'OPTIONS'],
         credentials: true
     },
-    db: {
-        mongodb: {
-            application: {
-                url: process.env.MONGO_CONNECTION_STRING,
-                options: {
-                    user: process.env.MONGO_USER,
-                    pass: process.env.MONGO_PASSWORD,
-                    minPoolSize: 5,
-                    maxPoolSize: 10
-                }
-            },
-        }
-    },
-    redis: {
-        host: 'localhost',
-        ttl: 86400,
-        port: 6379
-    },
-    cache: {
-        enabled: true,
-        ttl: 1800,
-        headerKey: 'x-identifier'
-    },
-    session: {
-        prefix: 'myapplication',
-        headerKey: 'x-identifier',
-        ttl: 3600
-    },
     log: {
         debug: true,
         requestResponse: {

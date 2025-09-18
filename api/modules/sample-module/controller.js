@@ -1,5 +1,5 @@
 const { BaseController } = require('simple-node-framework').Base;
-const CustomerService = require('./service/customer-service');
+const CustomerService = require('../../service/customer-service');
 
 // sample controller
 class Controller extends BaseController {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "clear;nyc --reporter=html --reporter=lcov --reporter=text-lcov --reporter=text --report-dir=test-reports ./node_modules/mocha/bin/mocha ./api/modules/*/test/unit/*.unit.js --timeout 12000",
-    "start": "clear; rm -rf logs/*.log*; nodemon index.js;",
+    "start": "clear; rm -rf logs/*.log*; node --watch index.js;",
     "test:dev": "clear;./node_modules/mocha/bin/mocha ./api/modules/*/test/unit/*.unit.js --timeout 12000 --watch",
     "integration": "clear;./node_modules/mocha/bin/mocha ./api/modules/*/test/integration/*.integration.js",
     "lint": "clear; ./node_modules/.bin/eslint api/*",
@@ -25,12 +25,12 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "mongoose": "^8.0.3",
-    "simple-node-framework": "^6.0.14"
+    "simple-node-framework": "^6.0.33"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint": "^9.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-import": "^2.16.0",
     "husky": "^7.0.4",
