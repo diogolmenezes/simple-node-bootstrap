@@ -30,7 +30,6 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "js-yaml": "^3.13.0",
-    "nodemon": "^2.0.7",
     "swagger": "^0.0.1",
     "swagger-editor": "^2.10.5"
   },
