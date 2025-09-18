@@ -53,6 +53,14 @@ module.exports = {
             ]
         }
     },
+    integration: {
+        rest: {
+            sample: { 
+                host: 'https://api.open-meteo.com/v1/'
+            }
+        }
+
+    },
     origin: {
         ignoreExact: [
             '/'
